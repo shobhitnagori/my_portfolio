@@ -81,5 +81,5 @@ This repository is intentionally focused on **decision-making, system design, an
 ## Contact
 
 - LinkedIn: [www.linkedin.com/in/shobhitnagori]
-- GitHub: [add link]
+- GitHub: [https://github.com/shobhitnagori/my_portfolio)]
 
