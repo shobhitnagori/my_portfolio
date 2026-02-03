@@ -1,8 +1,8 @@
 # Case Study: AI-Driven Survey Analytics & ETL Automation
 
 ## TL;DR
-Designed and delivered a metadata-driven, AI-assisted system to automate survey variable classification and ETL maintenance.  
-The solution reduced manual intervention, improved robustness to survey changes, and enabled faster, more reliable analytics delivery through a **multi-agent architecture with human-in-the-loop validation**.
+Designed a metadata-driven, AI-assisted system to automate survey variable classification and ETL maintenance.  
+The solution reduces manual intervention, improved robustness to survey changes, and enabled faster, more reliable analytics delivery through a **multi-agent architecture with human-in-the-loop validation**.
 
 ---
 
