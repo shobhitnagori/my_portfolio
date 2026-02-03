@@ -40,7 +40,7 @@ Designed a multi-agent system that:
 
 ## Ways of Working & Program Execution
 
-I place strong emphasis on **how teams operate**, not just what they build.
+I place strong emphasis on **how cross functional teams think and operate**, not just what they build.
 
 Artifacts include:
 - Delivery lifecycle frameworks  
