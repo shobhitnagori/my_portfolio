@@ -30,7 +30,7 @@ The objective is to create a scalable, AI-enabled data ecosystem that:
    * [Data Governance & Reconciliation](#data-governance--reconciliation)
 9. [Business Impact](#business-impact)
 10. [Roadmap & Evolution](#roadmap--evolution)
-11. [Key Considerations](#
+11. [Key Considerations](#design-tradeoffs)
 ---
 
 # Business Context & Objective
@@ -277,6 +277,8 @@ Phase 3:
 
 
 ---
+
+## Key Considerations
 
 # Design Tradeoffs
 
