@@ -30,6 +30,7 @@ The objective is to create a scalable, AI-enabled data ecosystem that:
    * [Data Governance & Reconciliation](#data-governance--reconciliation)
 9. [Business Impact](#business-impact)
 10. [Roadmap & Evolution](#roadmap--evolution)
+11. [Key Considerations](#
 ---
 
 # Business Context & Objective
@@ -211,7 +212,6 @@ Prevents KPI distortion due to structural misalignment.
 # Performance & Scalability Design
 
 The atomic grain of the fact table:
-
 ```
 SKU × Retailer × Week × Market
 ```
@@ -230,7 +230,6 @@ Ensures scalability across millions of SKU-week combinations.
 # Data Governance & Reconciliation
 
 Ensures executive trust.
-
 Includes:
 
 * ERP reconciliation checks
@@ -245,14 +244,12 @@ Each market has visibility into data health metrics.
 # Business Impact
 
 Before:
-
 * Fragmented reporting
 * Manual consolidation
 * KPI inconsistencies
 * Reactive decision-making
 
 After:
-
 * Unified revenue visibility
 * Margin transparency
 * Faster commercial insights
@@ -263,20 +260,244 @@ After:
 # Roadmap & Evolution
 
 Phase 1:
-
 * Core revenue visibility
 * KPI standardization
 * Executive dashboards
 
 Phase 2:
-
 * Elasticity modeling
 * Promotion simulation
 * Forecast integration
 
 Phase 3:
-
 * AI-driven revenue optimization engine
 * Prescriptive trade allocation
 * Automated driver-based alerts
+---
+
+
+---
+
+# Design Tradeoffs
+
+Enterprise RGM platforms involve deliberate architectural and governance tradeoffs. Below are key decisions and rationale.
+
+---
+
+## 1. Medallion Architecture vs Direct BI Modeling
+
+**Tradeoff:**
+Build structured Bronze → Silver → Gold layers vs allowing BI tools to model directly from ERP extracts.
+
+**Decision:** Medallion architecture.
+
+**Why:**
+
+* Enforces data quality before executive exposure
+* Enables auditability and replay
+* Scales across markets
+* Decouples transformation logic from visualization tools
+
+Direct BI modeling may work for small markets but fails at global scale and governance control.
+
+---
+
+## 2. Star Schema vs Single Wide Table
+
+**Tradeoff:**
+Highly normalized star schema vs denormalized flat reporting table.
+
+**Decision:** Star schema with curated aggregates.
+
+**Why:**
+
+* Clear fact grain definition
+* Dimension reusability
+* Scalable slicing across markets
+* Easier evolution of product hierarchies
+
+A single wide table increases rigidity and performance bottlenecks over time.
+
+---
+
+## 3. Centralized KPI Logic vs Local Flexibility
+
+**Tradeoff:**
+Allow markets to define their own KPIs vs enforce global definitions.
+
+**Decision:** Centralized KPI semantic layer with controlled extensions.
+
+**Why:**
+
+* Enables true cross-market comparability
+* Reduces executive confusion
+* Improves trust
+
+Local deviations are version-controlled and documented.
+
+---
+
+## 4. AI Automation vs Human-in-the-Loop
+
+**Tradeoff:**
+Fully automated AI-driven schema mapping vs supervised mapping.
+
+**Decision:** Human-in-the-loop with confidence scoring.
+
+**Why:**
+
+* Prevents structural misclassification
+* Maintains governance standards
+* Reduces risk of KPI distortion
+
+AI accelerates onboarding — it does not replace governance.
+
+---
+
+# Risks & Mitigation
+Large-scale RGM systems fail primarily due to governance and adoption gaps rather than technical limitations.
+
+---
+
+## Risk 1: KPI Misalignment Between Finance & Commercial
+
+**Mitigation:**
+
+* Joint KPI definition workshops
+* Signed-off KPI documentation
+* Finance reconciliation layer
+* Semantic version control
+---
+
+## Risk 2: Leadership Distrust Due to Reconciliation Gaps
+
+**Mitigation:**
+
+* Automated ERP reconciliation reports
+* Tolerance thresholds
+* Data quality dashboards
+* Early executive walkthroughs
+
+Trust is built before analytics sophistication.
+
+---
+
+## Risk 3: Product Hierarchy Instability
+
+Frequent brand restructuring distorts trend analysis.
+
+**Mitigation:**
+
+* Slowly Changing Dimensions (Type 2)
+* Hierarchy versioning
+* Effective-date tracking
+
+---
+
+## Risk 4: AI Misclassification of New Data Sources
+
+**Mitigation:**
+
+* Confidence thresholds
+* Manual review checkpoints
+* Mapping audit logs
+
+---
+
+## Risk 5: Low Adoption by Senior Leadership
+
+**Mitigation:**
+
+* Start with 6–10 North Star metrics
+* Executive-specific dashboard views
+* Narrative-based AI insights
+* Quarterly executive enablement sessions
+
+---
+
+# Product Ownership & Adoption Strategy
+This platform is treated as a **data product**, not a reporting tool.
+---
+
+## 1️. Product Ownership Model
+
+* Executive Sponsor (CRO / CFO)
+* Global RGM Product Owner
+* Market Data Stewards
+* Central Data Engineering Team
+* Governance Council
+
+Clear ownership prevents fragmentation.
+
+---
+
+## 2. Leadership Trust Strategy
+
+Trust is built in phases:
+
+Phase 1 – Visibility
+* Reconcile totals with ERP
+* Deliver stable KPI definitions
+
+Phase 2 – Reliability
+* Automated data quality scorecards
+* Transparent lineage
+
+Phase 3 – Intelligence
+* Driver-based insights
+* AI-powered explanations
+
+---
+
+## 3. Onboarding New Markets
+
+Structured onboarding framework:
+
+1. Data assessment
+2. Schema mapping (AI-assisted)
+3. KPI alignment workshop
+4. Reconciliation validation
+5. Go-live + executive demo
+
+Target onboarding time: Reduced by 40–60% through reusable templates and AI mapping.
+---
+
+## 4. Adoption Metrics
+
+Platform adoption is measured by:
+
+* % leadership meetings using platform data
+* Reduction in manual Excel reporting
+* Time to insight
+* User engagement metrics
+* Market onboarding cycle time
+---
+
+# Business KPIs for Success
+
+Success is defined not only by system stability but by commercial outcomes.
+---
+
+## Operational KPIs
+
+* Data freshness SLA compliance
+* Data quality score
+* Market onboarding cycle time
+* Reconciliation variance %
+---
+
+## Commercial Impact KPIs
+
+* Improvement in price realization
+* Trade spend ROI uplift
+* Reduction in revenue leakage
+* Margin transparency improvement
+* Forecast accuracy improvement
+---
+
+## Strategic Impact
+
+* Cross-market comparability achieved
+* Portfolio rationalization decisions enabled
+* AI-generated insight adoption rate
 ---
