@@ -98,16 +98,16 @@ Detailed KPI and metric logics: [KPI Framework](#kpi-framework)
 # AI-Enabled Extensibility
 
 The platform integrates AI in multiple areas:
-- Raw Data & ETL
+**Raw Data & ETL**
 * Schema mapping for new data sources
 * Automated column-to-dimension matching
 * Confidence scoring for mappings
 * Dynamic ETL template generation
 
-- Aggregated/Calculated Data 
+**Aggregated/Calculated Data** 
 * Revenue anomaly detection
 
-- Insights
+**Insights**
 * Executive insight summarization
 
 This reduces onboarding time for new markets and enhances decision intelligence.
@@ -177,7 +177,7 @@ All KPIs are centrally version-controlled to ensure a single source of truth.
 Critical for real RGM decision-making.
 Waterfall structure:
 ```
-- List Price
+  List Price
 - Invoice Discounts
 - Off-invoice Trade Spend
 - Promotional Allowances
@@ -274,7 +274,6 @@ Phase 3:
 * Prescriptive trade allocation
 * Automated driver-based alerts
 ---
-
 
 ---
 
