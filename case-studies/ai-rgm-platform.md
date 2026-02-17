@@ -98,6 +98,7 @@ Detailed KPI and metric logics: [KPI Framework](#kpi-framework)
 # AI-Enabled Extensibility
 
 The platform integrates AI in multiple areas:
+
 **Raw Data & ETL**
 * Schema mapping for new data sources
 * Automated column-to-dimension matching
@@ -146,6 +147,7 @@ Future expansion includes:
 * Demand forecasting engine
 * Portfolio rationalization simulations
 ---
+
 
 # Core Design Deep Dives
 
