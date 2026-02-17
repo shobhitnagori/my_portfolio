@@ -1,4 +1,4 @@
-Revenue Growth Management (RGM) Data & AI Platform
+## Revenue Growth Management (RGM) Data & AI Platform
 
 ## Executive Summary
 
